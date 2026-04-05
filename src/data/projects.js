@@ -11,8 +11,8 @@ export const projects = [
     title: "Portfolio Website",
     description: "Modern React portfolio with GSAP animations and dark mode.",
     tech: ["React", "GSAP", "CSS"],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://yourportfolio.com",
+    github: "https://github.com/Mdimran231/portfolio",
+    live: "https://imran-portfolio-livid.vercel.app/",
     image: portfolioImg
   },
 
