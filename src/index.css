@@ -1,0 +1,131 @@
+:root {
+  --bg: #0b0f14;
+  --card: #121826;
+  --text: #e5e7eb;
+  --muted: #e5e7eb;
+  --accent: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+section {
+  padding: 4rem 1.25rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+p  { color: var(--muted); line-height: 1.6; }
+
+/* Desktop */
+@media (min-width: 768px) {
+  section { padding: 6rem 2rem; }
+  h1 { font-size: 3rem; }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  margin-top: 15px;
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 0;
+}
+
+.project-card h3,
+.project-card p,
+.project-card .tech-stack,
+.project-card .project-buttons {
+  position: relative;
+  z-index: 1;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+   filter: brightness(1.2);
+  
+}
+
+.project-card p {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+  color: white;
+ 
+}
+
+
+.tech-stack {
+  margin: 15px 0;
+}
+
+.tech-stack span {
+  display: inline-block;
+  background: var(--accent);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px 5px 0 0;
+  color: white;
+}
+
+.project-buttons {
+  margin-top: 15px;
+}
+
+.project-buttons a {
+  text-decoration: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.project-buttons a:hover {
+  opacity: 0.8;
+}
+
+

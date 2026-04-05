@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+.project-card {
+  position: relative;
+  width: 320px;
+  height: 420px; /* Thoda size badha diya taaki content overlap na ho */
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background Image Layer */
+.project-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+/* Image zoom effect on hover */
+.project-card:hover .project-bg-img {
+  transform: scale(1.1);
+}
+
+/* Glassmorphism Overlay (Transparent to solid blur on hover) */
+.project-glass-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  
+  /* Hardcoded height: 60% yahan se hata di gayi hai! */
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.98) 80%, rgba(11, 15, 25, 0.5));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px; /* Sare items ke beech barabar space rahegi */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+/* Hover karte hi glass section ka color deep hoga aur effect smooth aayega */
+.project-card:hover .project-glass-overlay {
+  background: linear-gradient(to top, rgba(11, 15, 25, 1) 90%, rgba(11, 15, 25, 0.7));
+}
+
+.project-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.project-desc {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+/* --- TECH STACK PILLS --- */
+.tech-stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.tech-stack-pills span {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* --- ACTION BUTTONS --- */
+.project-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: auto; /* Buttons ko hamesha bottom par force karne ke liye */
+}
+
+.project-buttons a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-git {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-git:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-live {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-live:hover {
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+}

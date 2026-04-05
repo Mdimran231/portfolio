@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+body {
+  background-color: #0b0f19;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Base Wrapper for Background effects */
+.hero-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* --- GLASSMORPHISM CONTAINER --- */
+.hero-glass-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  z-index: 5;
+  gap: 30px;
+}
+
+/* Home.css - If using Transparent Image */
+
+
+
+/* --- TEXT STYLING --- */
+.welcome-badge {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-text .highlight {
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text .typing {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+/* --- BUTTONS WITH GLOW & GLASS EFFECTS --- */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* --- IMAGE & GLOW --- */
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: blobby 8s ease-in-out infinite alternate;
+}
+
+.glass-frame img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: inherit;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+}
+
+.glow-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  opacity: 0.4;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+/* --- ANIMATED BACKGROUND ORBS --- */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(99, 102, 241, 0.3);
+  top: -50px;
+  left: -50px;
+  animation: floatOrb 10s infinite alternate;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(168, 85, 247, 0.2);
+  bottom: -100px;
+  right: -50px;
+  animation: floatOrb 12s infinite alternate-reverse;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(236, 72, 153, 0.15);
+  bottom: 20%;
+  left: 30%;
+  animation: floatOrb 8s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes blobby {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding-top: 100px; /* Navbar ki height ke hisab se space create karega */
+  }
+
+  .hero-glass-container {
+    flex-direction: column-reverse; /* Pehle text dikhega, fir uske niche photo */
+    padding: 30px;
+    gap: 40px; /* Text aur Image ke beech gap badhane ke liye */
+  }
+
+  .glass-frame {
+    width: 200px; /* Mobile me image ka size thoda chhota kar diya */
+    height: 200px;
+    margin: 0 auto; /* Image ko center me lane ke liye */
+  }
+
+  .glass-frame img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero-desc {
+    margin: 0 auto 25px auto;
+  }
+}

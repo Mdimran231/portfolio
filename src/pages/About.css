@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+.about {
+  position: relative;
+  min-height: 100vh;
+  background-color: #0b0f19;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.about-container {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+/* --- TITLE --- */
+.about-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.about-title .highlight {
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- GLASS CARDS (Brighter Content) --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04); /* Thoda background aur bright kiya */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 1 !important; /* Forcefully content ko bright rakhne ke liye */
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-3px);
+}
+
+/* --- TEXT COLORS (Ensuring no dimness) --- */
+.glass-card p {
+  font-size: 1.05rem;
+  color: #f1f5f9; /* Super bright whitish-grey */
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.glass-card p:last-child {
+  margin-bottom: 0;
+}
+
+.glass-card strong {
+  color: #c7d2fe; /* Glowing light purple */
+  font-weight: 600;
+}
+
+.glass-card h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* --- SKILLS CSS --- */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-box h4 {
+  color: #cbd5e1; /* Made section headers brighter */
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-pills span {
+  background: rgba(99, 102, 241, 0.2); /* Slightly darker for better text contrast */
+  color: #ffffff; /* Bright white text inside pills */
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.2s ease;
+}
+
+.skill-pills span:hover {
+  background: #6366f1;
+  transform: translateY(-2px);
+}
+
+/* --- BG DECORATIONS --- */
+.about-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.orb-left { width: 300px; height: 300px; background: rgba(99, 102, 241, 0.1); top: 10%; left: -50px; }
+.orb-right { width: 350px; height: 350px; background: rgba(168, 85, 247, 0.1); bottom: 10%; right: -50px; }
+
+@media (max-width: 600px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

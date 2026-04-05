@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+.nav {
+  position: fixed; /* Top par chipka rahega */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(11, 15, 25, 0.8); /* Dark base with transparency */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000; /* Isse pure website ke upar rahega navbar */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- LINKS (Desktop) --- */
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.links a:hover, .links a.active {
+  color: #ffffff;
+}
+
+/* Bottom line on hover */
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after, .links a.active::after {
+  width: 100%;
+}
+
+/* Hamburger Hidden on Desktop */
+.menu-btn {
+  display: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* --- RESPONSIVE MOBILE VIEW --- */
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 25px;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 1002; /* Menu button stays on top */
+  }
+
+  /* Mobile Dropdown Menu */
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Shuru me right me chupa rahega */
+    height: 100vh;
+    width: 70%; /* Screen ka width occupy karega */
+    background: rgba(11, 15, 25, 0.95); /* Heavy dark background for readability */
+    backdrop-filter: blur(20px); /* Heavy blur to hide background content */
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.4s ease-in-out;
+    z-index: 1001; /* Isse piche ka content iske upar nahi aa sakega */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Active class jab trigger ho */
+  .links.active {
+    right: 0; /* Sliding in from right */
+  }
+
+  .links a {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+  }
+}

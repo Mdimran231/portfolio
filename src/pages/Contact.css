@@ -1,0 +1,133 @@
+.contact-section {
+  padding: 120px 20px;
+  text-align: center;
+  background: #07090ed0;
+  color: white;
+}
+
+/* Heading */
+.contact-section h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  color: #9ca3af;
+  margin-bottom: 60px;
+}
+
+/* Card */
+.contact-cards {
+  width: 100%;
+  max-width: 600px;   /* important */
+  margin: auto;
+  padding: 40px;
+  background: #eaedf1;  /* lighter than page */
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  
+  background: #0f172a;
+  color: rgb(239, 236, 236);
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #f6f7f8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.3);
+}
+
+/* Button */
+.contact-form button {
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: #22c55e;
+  color: #0b1220;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* Social Section */
+.contact-extra {
+  margin-top: 40px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: #94a3b8;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #22c55e;
+  transform: scale(1.2);
+}
+
+/* WhatsApp */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border-radius: 10px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37,211,102,0.4);
+}
+
+/* Success popup */
+.success-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #22c55e;
+  color: #0b1220;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+}
